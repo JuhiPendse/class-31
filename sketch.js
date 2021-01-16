@@ -1,7 +1,30 @@
+var string="Tanishqa"
+console.log(string)
+var ten=10
+console.log(ten)
+var bool=true
+console.log(bool)
+var Obj
+console.log(Obj)
+var Obj=null
+console.log(Obj)
+
+var arr1 = [1,2,3,4]
+console.log(arr1[0])
+
+var arr2=[[1,2],[3,4],[78,67]]
+console.log(arr2[1][0])
+
+arr2.push("juhi")
+console.log(arr2)
+arr2.pop()
+console.log(arr2)
 const Engine = Matter.Engine;
 const World= Matter.World;
 const Bodies = Matter.Bodies;
 const Constraint = Matter.Constraint;
+
+var gameState = "onsling"
 
 var engine, world;
 var box1, pig1,pig3;
@@ -69,12 +92,16 @@ function draw(){
 }
 
 function mouseDragged(){
+    if(gameState!=="launched")
     Matter.Body.setPosition(bird.body, {x: mouseX , y: mouseY});
 }
 
 
 function mouseReleased(){
     slingshot.fly();
+
+gamestate="launched"
+
 }
 
 function keyPressed(){
